@@ -56,12 +56,67 @@ Create a structuring element (kernel) of suitable size.
 Compare the original, eroded, and dilated images.
 
 ## Program
+```py
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
 
+# Create a blank image
+img = np.zeros((300, 300), dtype=np.uint8)
+
+# Insert text
+cv2.putText(img, 'OPENCV', (30, 150),
+            cv2.FONT_HERSHEY_SIMPLEX, 1.5, 255, 3)
+
+# Create kernel
+kernel = np.ones((5, 5), np.uint8)
+
+# Apply Erosion
+erosion = cv2.erode(img, kernel, iterations=1)
+
+# Display images
+plt.subplot(1, 2, 1)
+plt.imshow(img, cmap='gray')
+plt.title('Original Image')
+
+plt.subplot(1, 2, 2)
+plt.imshow(erosion, cmap='gray')
+plt.title('Erosion')
+
+plt.show()
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create a blank image
+img = np.zeros((300, 300), dtype=np.uint8)
+
+# Insert text
+cv2.putText(img, 'OPENCV', (30, 150),
+            cv2.FONT_HERSHEY_SIMPLEX, 1.5, 255, 3)
+
+# Create kernel
+kernel = np.ones((5, 5), np.uint8)
+
+# Apply Dilation
+dilation = cv2.dilate(img, kernel, iterations=1)
+
+# Display images
+plt.subplot(1, 2, 1)
+plt.imshow(img, cmap='gray')
+plt.title('Original Image')
+
+plt.subplot(1, 2, 2)
+plt.imshow(dilation, cmap='gray')
+plt.title('Dilation')
+
+plt.show()
+```
 ## Developed By
 
-**Name:** ____________________________
+**Name:**  Narendhiran P
 
-**Register No:** ______________________
+**Register No:**  212224230177
 
 ## Output
 
@@ -70,6 +125,9 @@ Compare the original, eroded, and dilated images.
 - A text image containing characters is displayed.
 - The image serves as the input for morphological processing.
 
+<img width="342" height="357" alt="image" src="https://github.com/user-attachments/assets/19304f33-a91d-4c74-aec3-12cf3d3238f9" />
+
+
 ### Erosion
 
 - Original image is displayed.
@@ -77,12 +135,19 @@ Compare the original, eroded, and dilated images.
 - The thickness of the characters is reduced.
 - Object boundaries shrink inward.
 
+<img width="713" height="367" alt="image" src="https://github.com/user-attachments/assets/660e1bf5-fb8a-4057-b42e-90f6b0555707" />
+
+
+
 ### Dilation
 
 - Original image is displayed.
 - Dilated image is displayed.
 - The thickness of the characters increases.
 - Object boundaries expand outward.
+
+<img width="711" height="357" alt="image" src="https://github.com/user-attachments/assets/546b7ba0-7a3e-4420-b5d5-4a61e7834ad4" />
+
 
 ## Result
 
